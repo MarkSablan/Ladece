@@ -2,10 +2,30 @@
 	margin: 0;
 	padding: 0;
 	color: #fff;
+	transition: 0.5s;
 }
 
 body{
 	background-color: #efefef;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background-color: #1d2128;
+}
+ 
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 .container{
@@ -14,7 +34,7 @@ body{
 }
 
 .wrapper{
-	padding: 0 10em;
+	padding: 0 100px;
 }
 
 nav{
@@ -52,6 +72,7 @@ nav .logo a h3{
 
 nav ul{
 	list-style: none;
+	float: right;
 }
 
 nav ul li{
@@ -86,6 +107,7 @@ nav ul li a:hover{
 	height: 120vh;
 	width: 100%;
 	background-image: url('../img/landing-bg-1920x1280.jpg');
+	/*background-image: url('../img/ladece/pool.jpg');*/
 	background-size: cover;
 	text-align: center;
 }
@@ -173,9 +195,10 @@ nav ul li a:hover{
 
 .section-b{
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: 5fr 1fr 5fr;
 	grid-row-gap: 20px;
-	padding: 1em 0;
+	/*padding-top: 5em;*/
+	padding-bottom: 5em;
 }
 
 .section-b .card{
@@ -186,6 +209,14 @@ nav ul li a:hover{
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
 
+/*.section-b .card:nth-child(even){
+	grid-column: 3/4;
+}
+
+.section-b .card:nth-child(odd){
+	grid-column: 4/5;
+}*/
+
 
 .subscribe{
 	width: 100%;
@@ -195,3 +226,68 @@ nav ul li a:hover{
 }
 
 
+@media(max-width: 1060px){
+
+	.landing .calendar *,
+	.landing .calendar .check-now{
+		width: 150px;
+		height: 50px;
+	}
+
+	.title p{
+		padding: 0 10em;
+	}
+}
+
+@media(max-width: 980px){
+	.section-b .card{
+		grid-column: 1/ 2;
+		width: 250px;
+		height: 300px;
+	}
+
+	.section-b .card:nth-child(even){
+		grid-column: 3/ 4;
+	}
+}
+
+@media(max-width: 860px){
+	
+	.landing .calendar .month{grid-column: 2/3;}
+
+	.landing .calendar .day{grid-column: 4/5;}
+
+	.landing .calendar .time{grid-column: 2/3;}
+
+	.landing .calendar .check-now{grid-column: 4/5;}
+
+	.title p{
+		padding: 0 5em;
+	}
+
+	.section-b {
+		margin-top: 50px;
+	}
+
+}
+
+@media(max-width: 786px){
+	.wrapper{
+		padding: 10px;
+	}
+
+	.landing .calendar *,
+	.landing .calendar .check-now{
+		width: 100%;
+		height: 40px;
+	}
+
+	.title p{
+		padding: 0;
+	}
+
+	.section-b .card,
+	.section-b .card:nth-child(even){
+		grid-column: 2/ 3;
+	}
+}
