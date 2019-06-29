@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	color: #fff;
-	transition: 0.5s;
+	/*transition: 0.5s;*/
 }
 
 body{
@@ -104,7 +104,7 @@ nav ul li a:hover{
 	/*z-index: ;*/
 /*	left: 0;
 	top: 0;*/
-	height: 120vh;
+	height: 110vh;
 	width: 100%;
 	background-image: url('../img/landing-bg-1920x1280.jpg');
 	/*background-image: url('../img/ladece/pool.jpg');*/
@@ -121,8 +121,8 @@ nav ul li a:hover{
 
 .landing .banner{
 	position: relative;
-	top: 40%;
-	transform: translateY(-40%);
+	top: 30%;
+	transform: translateY(-30%);
 }
 
 .landing .banner h2{
@@ -146,7 +146,7 @@ nav ul li a:hover{
 
 .landing .book-now{
 	position: relative;
-	top: 60%;
+	top: 45%;
 	text-align: left;
 }
 
@@ -169,6 +169,14 @@ nav ul li a:hover{
 
 .landing .calendar .check-now{
 	grid-column: 5/6;
+}
+
+.landing .calendar input,
+.landing .calendar select,
+.landing .calendar button{
+	color: #eaea;
+	background-color: rgba(255, 255, 255, 0.1);
+	border: none;
 }
 
 .title{
@@ -274,6 +282,14 @@ nav ul li a:hover{
 @media(max-width: 786px){
 	.wrapper{
 		padding: 10px;
+	}
+
+	nav ul{
+		display: none;
+	}
+
+	.landing .calendar{
+		padding: 0;
 	}
 
 	.landing .calendar *,
