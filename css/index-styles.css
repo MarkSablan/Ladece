@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	color: #fff;
+	font-family: sans-serif;
 	/*transition: 0.5s;*/
 }
 
@@ -180,10 +181,8 @@ nav ul li a:hover{
 }
 
 .title{
-
 	text-align: center;
-	/*background-color: #704e2e;*/
-	padding: 60px 0;
+	padding: 30px 0;
 }
 
 .title h1{
@@ -208,7 +207,7 @@ nav ul li a:hover{
 	/*grid-template-rows: 500px;*/
 	/*grid-row-gap: 20px;*/
 	/*padding-top: 5em;*/
-	padding-bottom: 5em;
+	/*padding-bottom: 5em;*/
 }
 
 .section-b .card{
@@ -231,16 +230,32 @@ nav ul li a:hover{
 	color: #333;
 }
 
-
-
-/*.section-b .card:nth-child(even){
-	grid-column: 3/4;
+.section-c .add-off *{
+	color: #efefef;
 }
 
-.section-b .card:nth-child(odd){
-	grid-column: 4/5;
-}*/
+.section-c {
+	display: grid;
+	/*grid-row-gap: 10px;*/
+}
 
+.section-c .add-off{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	/*background-color: blue;*/
+}
+
+.section-c .add-off .img-add-off{
+	width: 100%;
+	height: 400px;
+	background-size: cover;
+	background-position: center;
+	grid-column: span 2;
+}
+
+.section-c .add-off .description{
+	grid-column: span 2;
+}
 
 .subscribe{
 	width: 100%;
@@ -343,5 +358,13 @@ nav ul li a:hover{
 	.section-b .card .image{
 		width: 330px;
 		height: 300px;
+	}
+
+	.section-c .add-off .img-add-off{
+		grid-column: span 4;
+	}
+
+	.section-c .add-off .description{
+		grid-column: span 4;
 	}
 }
