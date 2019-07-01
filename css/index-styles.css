@@ -1,3 +1,7 @@
+/*title h1 font size 30px*/
+
+
+
 *{
 	margin: 0;
 	padding: 0;
@@ -6,36 +10,75 @@
 	/*transition: 0.5s;*/
 }
 
+
+.wrapper{
+	padding: 0 5em;
+}
+
+.title{
+	background-color: #fff;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.title h1{
+	color: #333;
+	font-size: 30px;
+}
+
+.title img{
+	width: 300px;
+	height: 50px;
+}
+
+.title p{
+	font-size: 13px;
+	color: #888;
+	padding: 0 10em;
+}
+
+.left{
+	text-align: left!important;
+}
+
+.line{
+	width: 150px;
+	height: 1px;
+	background-color: #ffc913;
+}
+
 body{
 	background-color: #efefef;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar ,
+.section-c .other-offers::-webkit-scrollbar{
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track ,
+.section-c .other-offers::-webkit-scrollbar-track{
   background-color: #1d2128;
 }
  
 /* Handle */
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb ,
+.section-c .other-offers::-webkit-scrollbar-thumb{
   background: #888; 
 }
 
 /* Handle on hover */
-body::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover ,
+.section-c .other-offers::-webkit-scrollbar-thumb:hover{
   background: #555; 
 }
 
 .container{
 	width: 100%;
 	overflow: hidden;
-}
-
-.wrapper{
-	padding: 0 100px;
 }
 
 nav{
@@ -88,7 +131,9 @@ nav ul li a{
 	margin-top: 20px;
 	padding: 20px 20px;
 	border-left: 1px #333 solid;
-	font-size: 16px;
+	font-size: 12px;
+	font-weight: bolder;
+	text-transform: uppercase;
 }
 
 nav ul li #first{
@@ -96,6 +141,7 @@ nav ul li #first{
 }
 
 nav ul li a:hover{
+	color: #704e2e;
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -120,17 +166,17 @@ nav ul li a:hover{
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.landing .banner{
+.landing .landing-title{
 	position: relative;
 	top: 30%;
 	transform: translateY(-30%);
 }
 
-.landing .banner h2{
+.landing .landing-title h2{
 	font-size: 50px;
 }
 
-.landing .banner p{
+.landing .landing-title p{
 	font-size: 18px;
 	position: relative;
 }
@@ -180,25 +226,7 @@ nav ul li a:hover{
 	border: none;
 }
 
-.title{
-	text-align: center;
-	padding: 30px 0;
-}
 
-.title h1{
-	color: #333;
-	font-size: 40px;
-}
-
-.title img{
-	width: 300px;
-	height: 70px;
-}
-
-.title p{
-	color: #333;
-	padding: 0 20em;
-}
 
 .section-b{
 	display: grid;
@@ -211,51 +239,240 @@ nav ul li a:hover{
 }
 
 .section-b .card{
+	/*position: relative;*/
 	justify-self: center;
+	text-align: center;
+	cursor: pointer;
 	width: 300px;
-	height: 500px;
+	height: 435px;
 	background-color: #fff;
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
 
 .section-b .card .image{
+	position: relative;
+	overflow: hidden;
 	width: 300px;
 	height: 350px;
 	background-size: cover;
 	background-position: center;
 }
 
-.section-b .card p{
-	padding: 10px;
+.section-b .card .card-title{
+	text-transform: uppercase;
+	padding: 10px 0; 
+	font-size: 18px;
 	color: #333;
 }
 
-.section-c .add-off *{
-	color: #efefef;
+.section-b .card .details{
+	text-transform: uppercase;
+	text-align: left;
+	padding: 0 10px;
+	font-size: 11px;
+	color: #704e2e;
+}
+
+/*.section-b .card:hover{
+	background-color: #efefef;
+}*/
+
+.section-b .card:hover .card-title{
+	color: #76b041;
+}
+
+.section-b .card:hover .details{
+	color: #76b041;
+}
+
+.section-b .card .image .add-info{
+	position: absolute;
+	width: 100%;
+	height: 350px;
+	bottom: -350px;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: 0.5s;
+}
+
+.section-b .card .image:hover .add-info{
+	bottom: 0;
+	text-align: center;
+}
+
+.section-b .card .image .add-info .quantity{
+	padding-top: 0.7em; 
+	font-size: 8em;
+	color: #72c3e5;
+}
+
+.section-b .card .image .extra-info{
+	text-transform: uppercase;
+	padding: 0 10px;
+	font-size: 12px;
+	color: #72c3e5;
+}
+/*.section-c .add-off *{
 }
 
 .section-c {
 	display: grid;
-	/*grid-row-gap: 10px;*/
+	grid-row-gap: 10px;
+	padding: 1em 0;
 }
 
 .section-c .add-off{
+	border: 0.5px #eee solid;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	/*background-color: blue;*/
 }
 
 .section-c .add-off .img-add-off{
 	width: 100%;
-	height: 400px;
+	height: 300px;
 	background-size: cover;
-	background-position: center;
+	background-position: left;
 	grid-column: span 2;
 }
 
 .section-c .add-off .description{
 	grid-column: span 2;
+	padding: 5px 10px;
 }
+
+.section-c .add-off .description .desc-title{
+	text-align: center;
+	font-size: 25px;
+	padding: 0.75em;
+	color: #222;
+
+}
+
+.section-c .add-off .description .desc-body{
+	padding: 0 1em;
+	font-size: 14px;
+	color: #555;
+}*/
+
+.section-c{
+	background-color: #fff;
+	padding: 0 0 5em 0;
+}
+
+.section-c .other-offers{
+	overflow-x: scroll;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	column-gap: 10px;
+	/*background-color: blue;*/
+}
+
+.section-c .other-offers .card{
+	position: relative;
+	justify-self: center;
+	width: 300px;
+	height:  310px;
+	overflow: hidden;
+}
+
+
+.section-c .other-offers .card img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: 0.5s;
+}
+
+.section-c .other-offers .card:hover img{
+	transform: scale(1.2);
+}
+
+.section-c .other-offers .card .card-desc{
+	/*position: absolute;*/
+	background-color: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	bottom: -100px;
+	transition: 0.5s;
+}
+
+.section-c .other-offers .card .card-desc .title{
+	padding: 0.5em 0;
+}
+
+.section-c .other-offers .card .card-desc .body{
+	padding: 0 0.3em 0.5em 0.3em;
+}
+
+.section-c .other-offers .card:hover .card-desc{
+	bottom: 0;
+}
+
+
+.banner{
+	width: 100%;
+	height: 350px;
+	background-size: cover;
+}
+
+.section-d{
+	background-color: #fff;
+	padding-bottom: 1.5em;
+}
+
+.section-d .events{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-flow: row-dense;
+	grid-template-rows: 1fr;
+	grid-column-gap: 20px; 
+	grid-row-gap: 10px;
+}
+
+.section-d .event{
+	position: relative;
+}
+
+.section-d .event .event-title{
+	width: 100%;
+	padding: 1.5em 3em; 
+	position: absolute;
+}
+
+.section-d .event .event-title p{
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #ffc913;
+}
+
+.section-d .event .event-title h1{
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #efefef;
+}
+
+.section-d .span1{
+	height: 280px;
+}
+
+.section-d .span2{
+	height: 600px;
+	grid-row: 1/3;
+}
+
+.section-d .events img{
+	position: absolute;
+	width: 100%;
+}
+
+.section-d .span1 img{
+	height: 300px;
+}
+
+.section-d .span2 img{
+	height: 600px;
+}
+
 
 .subscribe{
 	width: 100%;
@@ -263,6 +480,9 @@ nav ul li a:hover{
 	background-color: #704e2e;
 
 }
+
+
+/*desktop*/
 
 @media(max-width: 1160px){
 	.section-b .card{
@@ -305,6 +525,7 @@ nav ul li a:hover{
 	}
 }
 
+/*tablet*/
 @media(max-width: 860px){
 	
 	.landing .calendar .month{grid-column: 2/3;}
@@ -325,7 +546,8 @@ nav ul li a:hover{
 
 }
 
-@media(max-width: 786px){
+/*mobile*/
+@media(max-width: 760px){
 	.wrapper{
 		padding: 10px;
 	}
@@ -351,7 +573,7 @@ nav ul li a:hover{
 	.section-b .card,
 	.section-b .card:nth-child(even){
 		grid-column: 2/ 3;
-		width: 330px;
+		width: 100%;
 		height: 400px;
 	}
 
@@ -366,5 +588,15 @@ nav ul li a:hover{
 
 	.section-c .add-off .description{
 		grid-column: span 4;
+	}
+
+	.section-d .span1,
+	.section-d .span2{
+		grid-column: span 2;
+	}
+
+	.section-d .span1 img,
+	.section-d .span2 img{
+		height: 100%;
 	}
 }
