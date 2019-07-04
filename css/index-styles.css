@@ -168,8 +168,8 @@ nav ul li a:hover{
 
 .landing .landing-title{
 	position: relative;
-	top: 30%;
-	transform: translateY(-30%);
+	top: 45%;
+	transform: translateY(-45%);
 }
 
 .landing .landing-title h2{
@@ -191,7 +191,7 @@ nav ul li a:hover{
 	background-color: #ff0000;
 }*/
 
-.landing .book-now{
+/*.landing .book-now{
 	position: relative;
 	top: 45%;
 	text-align: left;
@@ -211,23 +211,25 @@ nav ul li a:hover{
 	width: 200px;
 	height: 120px;
 	/*background-color: blue;*/
-	justify-self: center;
+/*	justify-self: center;
 }
 
 .landing .calendar .check-now{
 	grid-column: 5/6;
-}
-
+}*/
+/*
 .landing .calendar input,
 .landing .calendar select,
 .landing .calendar button{
 	color: #eaea;
 	background-color: rgba(255, 255, 255, 0.1);
 	border: none;
-}
+}*/
 
 .sched-check * {
 	color: black;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: lighter;
 }
 
 .sched-check{
@@ -252,6 +254,7 @@ nav ul li a:hover{
 }
 
 .cal-selector{
+	position: relative;
 	width: 100%;
 	height: 100%;
 	border-radius: 7px;
@@ -259,6 +262,19 @@ nav ul li a:hover{
 	display: grid;
 	grid-template-columns: 60px 1fr 60px;
 	grid-template-rows: 60px;
+}
+
+.cal-selector .calendar{
+	display: none;
+	position: absolute;
+	bottom: 60px;
+	left: 0;
+	z-index: 1000;
+	grid-column: span 3;
+	width: 335px;
+	height: 400px;
+	background-color: #fefefe;
+	box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7);
 }
 
 .cal-selector *{
@@ -308,6 +324,7 @@ nav ul li a:hover{
 }
 
 .cal-selector .display .month{
+	font-size: 25px;
 	left: 7px;
 	top: 5px;
 }
@@ -325,7 +342,7 @@ nav ul li a:hover{
 }
 
 .cal-selector .display .year{
-	font-weight: bold;
+	/*font-weight: bold;*/
 	font-size: 30px;
 	right: 7px;
 	top: 50%;
@@ -596,13 +613,38 @@ nav ul li a:hover{
 	height: 600px;
 }
 
-/*
-.subscribe{
-	width: 100%;
-	padding: 30px;
-	background-color: #704e2e;
 
-}*/
+/*GALLERY SECTION*/
+.gallery{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 10px;
+	padding-top: 1em;
+	padding-bottom: 1.5em;
+}
+
+.gallery .description *{
+	color: #333;
+}
+
+.gallery .preview{
+	grid-column: span 2;
+	display: grid;
+	grid-template-columns:repeat(2, 1fr);
+	grid-gap: 5px;
+	width: 100%;
+	/*background-color: blue;*/
+}
+
+.gallery .preview img{
+	width: 100%;
+	height: 280px;
+	align-self: center;
+	justify-self: center;
+}
+
+
+/*FOOTER*/
 .foot-wrap{
 	padding: 1.5em 1em;
 }
@@ -822,6 +864,14 @@ footer .bottom .policy *{
 	.section-b .card:nth-child(even){
 		grid-column: 3/ 4;
 	}
+
+	.gallery .block{
+		grid-column: span 3;
+	}
+
+	.gallery .preview img{
+		height: 350px;
+	}
 }
 
 
@@ -931,5 +981,10 @@ footer .bottom .policy *{
 	.section-d .span1 img,
 	.section-d .span2 img{
 		height: 100%;
+	}
+
+	.gallery .preview img{
+		height: 280px;
+		grid-column: span 2;
 	}
 }
