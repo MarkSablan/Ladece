@@ -510,7 +510,6 @@ nav ul li a:hover{
 	justify-self: center;
 	text-align: center;
 	/*cursor: pointer;*/
-	z-index: -1;
 	cursor: default;
 	width: 300px;
 	height: 435px;
