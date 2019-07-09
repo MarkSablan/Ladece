@@ -16,27 +16,49 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 </head>
 <body>
-	
 	<div class="container">
+<!-- FLOATING ELEMENTS -->
+	<a href="#landing" class="go-to-top-btn link-btn"><i class="fas fa-arrow-up"></i></a>
+
+	<div class="bot-btn">
+		<p>Open FAQ bot</p>
+	</div>
+
 <!-- QUICK-INFO -->
-		<!-- <section class="quick-info" style="width: 100%; height: 30px; background-color: blue;"></section> -->
+		<section class="quick-info">
+				<div class="address block">
+					<i class="fas fa-map-marker-alt fa-sm" style="color: #888; padding-right: 10px;"></i>
+					<p>#4224 A-1 Bilukan Cabrera Road, Barangay Dolores, Taytay, Rizal</p>
+				</div>
+				<div class="weather block">
+					<p class="weather-address">Taytay, Rizal</p>
+					<p class="weather-degree">34 C</p>
+					<p class="weather-status">Partly Cloudy</p>
+					<p class="weather-icon">a</p>
+				</div>
+		</section>
 <!-- NAVIGATION -->
 		<nav>	
 			<div class="logo"><a href="#"><img src="./img/logo.png"><h3>adecé</h3></a></div>
+			<div class="hamburger">
+				<span class="line"></span>
+				<span class="line"></span>
+				<span class="line"></span>
+			</div>
 			<ul>
-				<li><a href="">Home</a> </li>
+				<li><a href="" id="first">Home</a> </li>
 				<li><a href="">Accomodation</a></li>
 				<li><a href="">Schedules</a></li>
 				<li><a href="">Book Now</a></li>
 				<li><a href="">Gallery</a></li>
-				<li><a href="">Contact Us</a></li>
-				<li><a href="">About</a></li>
+				<!-- <li><a href="">Contact Us</a></li> -->
+				<!-- <li><a href="">About</a></li> -->
 			</ul>
 		</nav>
 
 <!-- LANDING -->
 
-		<section class="landing">
+		<section class="landing" id="landing">
 
 			<div class="fade"></div>
 
@@ -44,6 +66,7 @@
 				<h2>Welcome to Ladece</h2>
 				<p>Private Resort</p>
 			</div>
+
 		</section>
 
 <!-- AVAILABILITY CHECKER -->
@@ -339,7 +362,7 @@
 		<section class="section-d wrapper">
 			<div class="container">
 				<div class="events">
-					<div class="event span1">
+					<div class="event span1" data-aos="fade-left" data-aos-duration="1000" data-aos-once='true'>
 						<img src="./img/wedding.jpg">
 						<div class="event-title">
 							<p>EVENTS</p>
@@ -347,7 +370,7 @@
 						</div>
 					</div>
 
-					<div class="event span2">
+					<div class="event span2" data-aos="fade-right" data-aos-duration="1000" data-aos-once='true'>
 						<img src="./img/bake-baked-bakery-2349996 (1).jpg">
 						<div class="event-title">
 							<p>EVENTS</p>
@@ -355,7 +378,7 @@
 						</div>
 					</div>
 
-					<div class="event span1">
+					<div class="event span1" data-aos="fade-left" data-aos-duration="1000" data-aos-once='true'>
 						<img src="./img/bonding-daylight-friends-1645634.jpg">
 						<div class="event-title">
 							<p>EVENTS</p>
@@ -364,25 +387,51 @@
 					</div>
 				</div>
 			</div>
-			<a href="#" style="color: #333">See full list of accepted events</a>
+			<a href="#" class="link-btn">See full list of accepted events <i class="fas fa-arrow-right fa-sm" id="cal-btn-i"></i></a>
 		</section>
 
-		<section class="title wrapper left" style="background-color: #fff;">
-			<h1 class="" id="events-title" style="font-size: 30px!important">Our Gallery</h1>
+<!-- GALLERY -->
+		<section class="title wrapper left" style="background-color: #333;border-top: 1px #72c3e5 solid;">
+			<h1 class="" id="events-title" style="font-size: 30px!important; color: #fff";>Our Gallery</h1>
 			<div class="line" style="width: 180px!important"></div>
 		</section>
 
-		<section class="gallery wrapper" style="background-color: #fff;">
-			<div class="description block">
+		<section class="gallery wrapper" style="background-color: #333;">
+			<div class="description block" data-aos="fade-right" data-aos-duration="1000" data-aos-once='true'>
 				<h3>Lorem ipsum dolor.</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis dolor velit, odit dignissimos saepe ratione obcaecati. Voluptas quae corporis a rerum cupiditate? Sunt harum nostrum optio dignissimos quis, magnam eius.</p>
-				<a href="#">Open Gallery</a>
 			</div>
 			<div class="preview block">
-				<img src="./img/cottage2.jpeg" alt="">
-				<img src="./img/cottage1.jpeg" alt="">
-				<img src="./img/infinity-pool-1280x853.jpg" alt="">
-				<img src="./img/Hot-Sale-Cheap-Price-Patio-Swimming-Pool-Furniture-Sun-Bed-Beach-Chair-T501.jpg" alt="">
+				<div class="slideshow block" data-aos="fade-in" data-aos-duration="1000" data-aos-once='true'>
+					<div class="btn left-btn"></div>
+					<div class="btn right-btn"></div>
+					
+					<div class="image-cont">
+						<img src="./img/infinity-pool-1280x853.jpg" alt="">
+						<p class="image-text">Image 1</p>
+					</div>
+					<div class="image-cont">
+						<img src="./img/landing-bg-1280x853.jpg" alt="">
+						<p class="image-text">Image 2</p>
+					</div>
+					<div class="image-cont">
+						<img src="./img/pool-side-1920x1280.jpg" alt="">
+						<p class="image-text">Image 3</p>
+					</div>
+					<div class="image-cont">
+						<img src="./img/windows at EB Coorg.jpg" alt="">
+						<p class="image-text">Image 4</p>
+					</div>
+					<div class="image-cont">
+						<img src="./img/cottage2.jpeg" alt="">
+						<p class="image-text">Image 5</p>
+					</div>
+					<div class="image-cont">
+						<img src="./img/contemporary-room-640x426.jpg" alt="">
+						<p class="image-text">Image 6</p>
+					</div>
+				</div>
+				<a href="#" class="link-btn">Open Gallery <i class="fas fa-arrow-right fa-sm" id="cal-btn-i"></i></a>
 			</div>
 		</section>
 	</div>
@@ -458,12 +507,16 @@
 	<script type="text/javascript">
 		window.onload = function() {
 			AOS.init();
+
+// ----CALENDAR ------
 			let calendarBtn = document.querySelector("#cal-btn");
 			let calendarBtnI = document.querySelector("#cal-btn-i");
 			let calendar = document.querySelector('.calendar');
 			let time = document.querySelector('#time');
 			let indicator = document.querySelector('.selected-icon');
 			let body = document.querySelector('body');
+			let hamburger = document.querySelector('.hamburger');
+			let ulLinks = document.querySelector('ul');
 
 			// fix double click to open bug
 			calendar.style.display = 'none';
@@ -487,8 +540,6 @@
 
 			// body.addEventListener('click', () => calendar.style.display= 'none');
 
-
-
 			time.addEventListener('change', () => {
 				indicator.innerHTML = '';
 				let icon = document.createElement('i');
@@ -503,8 +554,80 @@
 				}
 				indicator.appendChild(icon);
 			});
-		}
 
+// ----- SLIDESHOW ------
+			let images = document.querySelectorAll('.image-cont');
+			let leftBtn = document.querySelector('.left-btn');
+			let rightBtn = document.querySelector('.right-btn');
+			let index = 0;
+
+			function init(){
+				for(let i = 0; i < images.length; i++){
+					images[i].style.display = 'none';
+				}
+				images[index].style.display = 'block';
+			}
+
+			function fadeOut(element){
+				let op = 1;
+				let timer = setInterval(function(){
+					if(op <= 0.1){
+						clearInterval(timer);
+						element.style.display = 'none';
+					}
+					element.style.opacity = op;
+					element.style.filter = 'alpha(opacity='+ op * 100 + ')';
+					op -= op * 0.05;
+					// console.log(op);
+				},10);
+			}
+
+			function fadeIn(element){
+				let op = 0.1;
+				element.style.display = 'block';
+				element.style.opacity = op;
+				let timer = setInterval(function(){
+					if(op >= 1){
+						clearInterval(timer);
+					}
+					element.style.opacity = op;
+					element.style.filter = 'alpha(opacity='+ op * 100 + ')';
+					op += op * 0.02;
+				},10);
+			}
+
+			function slideRight(){
+				let previous = images[index];
+				if(index >= images.length-1) index = 0;
+				else index++;
+				fadeOut(previous);
+				fadeIn(images[index]);
+			}
+
+			function slideLeft(){
+				let previous = images[index];
+				if(index <= 0) index = images.length -1;
+				else index--;
+				fadeOut(previous);
+				fadeIn(images[index]);
+			}
+
+			rightBtn.addEventListener('click', function() {
+				slideRight();
+			});
+
+			leftBtn.addEventListener('click', () => {
+				slideLeft();
+			});
+
+			init();
+			setInterval(() => slideRight(), 5000);
+
+			hamburger.addEventListener('click',()=> {
+				ulLinks.classList.toggle('open-nav');
+				setTimeout(()=> ulLinks.style.maxHeight = 'auto', 100);
+			})
+		}
 	</script>
 
 </body>
