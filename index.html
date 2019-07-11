@@ -12,8 +12,12 @@
 	<link rel="icon" href="./img/logo.png">
 	<link rel="stylesheet" type="text/css" href="./css/index-styles.css">
 	<link rel="stylesheet" type="text/css" href="./lib/aos.css">
+	<link rel="stylesheet" type="text/css" href="./lib/calendar.css">
 	<link rel="stylesheet" href="./lib/font-awesome/css/all.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+	<script src="./lib/jquery.js"></script>
+	<script src="./lib/calendar.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -83,12 +87,26 @@
 						<div class="cal-icon"><i class="far fa-calendar-alt fa-2x"></i></div>		
 						<div class="display">
 							<h1 class="month">February,</h1>
-							<h3 class="day">07,</h3>
+							<h3 class="day" id='day'>07,</h3>
 							<h3 class="day-abbr">Wednesday</h3>
 							<h1 class="year">2019</h1>
 						</div>
-						<div class="btn" id="cal-btn"><i class="fas fa-arrow-right" id="cal-btn-i"></i></div>
-						<div class="calendar">asd</div>
+						<div class="open-cal-btn" id="cal-btn"><i class="fas fa-arrow-right" id="cal-btn-i"></i></div>
+<!-- CALENDAR -->
+						<div class="calendar">
+							<div class="calendar-footer">
+								<div class="next-prev">
+									<div class="btn prev-btn">prev</div>
+									<div class="btn next-btn">next</div>
+								</div>
+								<div class="options">
+									<div class="btn jump-today"><i class="far fa-dot-circle fa-sm"></i></div>
+									<div class="btn cancel-btn">Cancel</div>
+									<div class="btn ok-btn">Ok</div>
+								</div>	
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="time block">
@@ -96,11 +114,11 @@
 						<i class="fas fa-sun fa-2x" style="color: #ffc913"></i>
 					</div>
 					<select name="" id="time" class="drop-down">
-							<option value="day">Day | 09:00 - 17:00</option>
-							<option value="night">Night | 19:00 - 07:00</option>
+							<option value="Day">Day | 09:00 - 17:00</option>
+							<option value="Night">Night | 19:00 - 07:00</option>
 					</select>
 				</div>
-				<div class="check block"><button class="check-now">Check Availability</button></div>
+				<div class="check block"><button class="check-now" id="check-now">Check Availability</button></div>
 			</div>
 		</section>
 
@@ -512,35 +530,35 @@
 			let calendarBtn = document.querySelector("#cal-btn");
 			let calendarBtnI = document.querySelector("#cal-btn-i");
 			let calendar = document.querySelector('.calendar');
-			let time = document.querySelector('#time');
+			let time = $('#time');
 			let indicator = document.querySelector('.selected-icon');
 			let body = document.querySelector('body');
-			let hamburger = document.querySelector('.hamburger');
-			let ulLinks = document.querySelector('ul');
+			let hamburger = $('.hamburger');
+			let ulLinks = $('ul');
 
 			// fix double click to open bug
 			calendar.style.display = 'none';
 
-			document.addEventListener('click', (e) => {
-				console.log(e.target !== calendarBtn);
-				if(e.target !== calendar && calendar.style.display == 'block' && e.target !== calendarBtn && e.target !== calendarBtnI){
-					calendar.style.display = 'none';
-					console.log('hide calendar');
-				}
-			});
+			// document.addEventListener('click', (e) => {
+			// 	// console.log(e.target !== calendarBtn);
+			// 	if(e.target !== calendar && calendar.style.display == 'block' && e.target !== calendarBtn && e.target !== calendarBtn){
+			// 		calendar.style.display = 'none';
+			// 		console.log('hide calendar');
+			// 	}
+			// });
 
-			calendarBtn.addEventListener('click', () => {
 				// display at bottom 60px if scroll < content/calendar
 				// displat at top 60px if scroll > content/calendar
+			calendarBtn.addEventListener('click', toggleCalendar);
+
+			function toggleCalendar(){
 				if(calendar.style.display == 'none') calendar.style.display= 'block';
 				else calendar.style.display= 'none';
-			});
-
-			body.addEventListener('focusout', () => calendar.style.display= 'none');
-
+			}
+			// body.addEventListener('focusout', () => calendar.style.display= 'none');
 			// body.addEventListener('click', () => calendar.style.display= 'none');
 
-			time.addEventListener('change', () => {
+			time.on('change', () => {
 				indicator.innerHTML = '';
 				let icon = document.createElement('i');
 				icon.classList.add('fas');
@@ -554,6 +572,34 @@
 				}
 				indicator.appendChild(icon);
 			});
+
+			let c = new Calendar($('.calendar'));
+			let okBtn = $('.ok-btn'),
+			cancelBtn = $('.cancel-btn');
+			let monthLbl = $('.month'),
+			dayLbl = $('#day'),
+			yearLbl = $('.year'),
+			checkNow = $('#check-now');
+
+			checkNow.on('click', ()=>{
+
+				alert(`${monthLbl.html()} ${dayLbl.html()} ${yearLbl.html()} ${time.val()}`);
+				console.log(time);
+
+			});
+
+			cancelBtn.on('click', toggleCalendar);
+
+			okBtn.on('click', ()=>{
+
+				let date = c.getSelectedDate();
+				monthLbl.html(date.month);
+				dayLbl.html(date.day);
+				yearLbl.html(date.year);
+				// alert(date.fullDate);
+				openCalendar();
+			});
+
 
 // ----- SLIDESHOW ------
 			let images = document.querySelectorAll('.image-cont');
@@ -623,10 +669,10 @@
 			init();
 			setInterval(() => slideRight(), 5000);
 
-			hamburger.addEventListener('click',()=> {
-				ulLinks.classList.toggle('open-nav');
-				setTimeout(()=> ulLinks.style.maxHeight = 'auto', 100);
-			})
+
+			hamburger.on('click', function() {
+				ulLinks.toggleClass('open-nav');
+			});
 		}
 	</script>
 
