@@ -50,7 +50,7 @@
 				<span class="line"></span>
 			</div>
 			<ul>
-				<li><a href="" id="first">Home</a> </li>
+				<li><a href="" id="first" class="active">Home</a> </li>
 				<li><a href="">Accomodation</a></li>
 				<li><a href="">Schedules</a></li>
 				<li><a href="">Book Now</a></li>
@@ -520,6 +520,18 @@
 		</section>
 		
 	</footer>
+
+	<script 
+		defer="true" type="text/javascript" 
+		botId="5d3b0ed740a0d3eb2dbbfc34" 
+		class="botcopy-embedder-d7lcfheammjct" 
+		id="botcopy-embedder-d7lcfheammjct"> 
+		var s = document.createElement('script'); 
+		s.type = 'text/javascript'; s.async = true; 
+		s.src = 'https://d7lcfheammjct.cloudfront.net/js/injection.js'; 
+		var embedder = document.getElementById('botcopy-embedder-d7lcfheammjct'); 
+	 	embedder.parentNode.insertBefore(s, embedder); 
+	</script>
 	
 	<script type="text/javascript" src='./lib/aos.js'></script>
 	<script type="text/javascript">
@@ -535,6 +547,9 @@
 			let body = document.querySelector('body');
 			let hamburger = $('.hamburger');
 			let ulLinks = $('ul');
+			let hbg1 = $('.line:nth-child(1)');
+			let hbg2 = $('.line:nth-child(2)');
+			let hbg3 = $('.line:nth-child(3)');
 
 			// fix double click to open bug
 			calendar.style.display = 'none';
@@ -672,6 +687,9 @@
 
 			hamburger.on('click', function() {
 				ulLinks.toggleClass('open-nav');
+				hbg1.toggleClass('line-ani-1');
+				hbg2.toggleClass('line-ani-2');
+				hbg3.toggleClass('line-ani-3');
 			});
 		}
 	</script>
