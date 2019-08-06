@@ -1,29 +1,5 @@
-html{
-	scroll-behavior: smooth;
-}
-
-body{
-	background-color: #efefef;
-	font-family: sans-serif;
-}
-
-*{
-	margin: 0;
-	padding: 0;
-	color: #fff;
-}
-
-p{
-	font-size: 13px;
-	color: #fff;
-}
-
-a{
-	font-size: 13px;
-	color: #888;
-}
-
 /*TOP HEARDER*/
+/*UNUSED*/
 .quick-info{
 	position: absolute;
 	top: 0;
@@ -58,6 +34,7 @@ a{
 	 margin-left: auto;
 }
 
+/*LANDING SECTION*/
 .landing{
 	position: relative;
 	/*z-index: ;*/
@@ -292,9 +269,7 @@ a{
 	cursor: pointer;
 }
 
-.controls .time .drop-down option{
-	background-color: #fff;
-}
+.controls .time .drop-down option{background-color: #fff;}
 
 /*CHECK NOW BUTTON*/
 .controls .check-now{
@@ -311,7 +286,7 @@ a{
 	cursor: pointer;
 }
 
-/*Package Inclusions*/
+/*PACKAGE INCLUSIONS SECTION*/
 .section-b{
 	display: grid;
 	grid-template-columns: 5fr 1fr 5fr;
@@ -359,13 +334,9 @@ a{
 	color: #704e2e;
 }
 
-.section-b .card:hover .card-title{
-	color: #76b041;
-}
+.section-b .card:hover .card-title{color: #76b041;}
 
-.section-b .card:hover .details{
-	color: #76b041;
-}
+.section-b .card:hover .details{color: #76b041;}
 
 .section-b .card .image .add-info{
 	position: absolute;
@@ -405,7 +376,7 @@ a{
 	transition-delay: 0.5s;
 }
 
-/*OTHER OFFERS*/
+/*OTHER OFFERS SECTION*/
 .section-c{background-color: #fff;}
 
 .section-c .cards-container{
@@ -446,13 +417,6 @@ a{
 	border-bottom-right-radius: 3px;
 }
 
-/*BANNER - LARGE IMAGE SECTION*/
-.banner{
-	width: 100%;
-	height: 350px;
-	background-size: cover;
-}
-
 /*EVENTS SHOWCASE*/
 .section-d{
 	background-color: #fff;
@@ -489,9 +453,7 @@ a{
 	color: #efefef;
 }
 
-.section-d .span1{
-	height: 280px;
-}
+.section-d .span1{height: 280px;}
 
 .section-d .span2{
 	height: 600px;
@@ -503,13 +465,9 @@ a{
 	width: 100%;
 }
 
-.section-d .span1 img{
-	height: 300px;
-}
+.section-d .span1 img{height: 300px;}
 
-.section-d .span2 img{
-	height: 600px;
-}
+.section-d .span2 img{height: 600px;}
 
 /*GALLERY SECTION*/
 .gallery{
@@ -527,17 +485,11 @@ a{
 	justify-self: center;
 }
 
-.gallery .description{
-	align-self: stretch;
-}
+.gallery .description{align-self: stretch;}
 
-.gallery .description *{
-	color: #fff;
-}
+.gallery .description *{color: #fff;}
 
-.gallery .description h3{
-	text-transform: uppercase;
-}
+.gallery .description h3{text-transform: uppercase;}
 
 .gallery .description p{
 	padding-top: 1.5em;
@@ -621,39 +573,20 @@ a{
 
 @media(max-width: 1160px){
 	/*display stacked*/
-	.sched-check .controls .block{
-		grid-column: span 3;
-	}
-	.section-b .card{
-		grid-column: 1/ 2;
-	}
+	.sched-check .controls .block{grid-column: span 3;}
 
-	.section-b .card:nth-child(even){
-		grid-column: 3/ 4;
-	}
+	.section-b .card{grid-column: 1/ 2;}
 
-	.gallery .block{
-		grid-column: span 3;
-	}
+	.section-b .card:nth-child(even){grid-column: 3/ 4;}
+
+	.gallery .block{grid-column: span 3;}
 	
 	.gallery .slideshow,
-	.gallery .preview .image-cont{
-		height: 450px;
-	}
+	.gallery .preview .image-cont{height: 450px;}
 }
 
 @media(max-width: 1060px){
-	.title p{
-		padding: 0 10em;
-	}
-
-	.section-c .small-card{
-		width: 170px;
-	}
-
-	.small-card-title{
-
-	}
+	.section-c .small-card{width: 170px;}
 }
 
 @media(max-width: 980px){
@@ -668,163 +601,43 @@ a{
 		height: 300px;
 	}
 
-	.section-b .card:nth-child(even){
-		grid-column: 3/ 4;
-	}
+	.section-b .card:nth-child(even){grid-column: 3/ 4;}
 
-	.section-c .small-card{
-		width: 170px;
-	}
+	.section-c .small-card{width: 170px;}
 
 	.small-card-title{
 		height: 40px;
 		font-size: 14px;
 	}
 
-	.small-card-content{
-		height: 120px;
-	}
+	.small-card-content{height: 120px;}
 }
 
 /*tablet*/
 @media(max-width: 860px){
 
-	.title p{
-		padding: 0 5em;
-	}
-
-	.section-b {
-		margin-top: 50px;
-	}
+	.section-b {margin-top: 50px;}
 	
-	.section-c .small-card{
-		width: 145px;
-	}
+	.section-c .small-card{width: 145px;}
 
 	.small-card-title{
 		height: 40px;
 		font-size: 14px;
 	}
 
-	.small-card-content{
-		height: 120px;
-	}
+	.small-card-content{height: 120px;}
 	
-	footer .block,
-	footer .top .location{
-		grid-column: span 3;
-	}
-
 	.gallery .slideshow,
-	.gallery .preview .image-cont{
-		height: 320px;
-	}
+	.gallery .preview .image-cont{height: 320px;}
 }
-
-.open-nav{
-	display: grid;
-	grid-template-columns: 1fr;
-	right: 0;
-	animation: slideDown 0.5s ease-in-out;
-	animation-fill-mode: forwards;
-}
-
-.line-ani-1{
-	animation: tp-close-ani 0.5s ease-in-out;
-	animation-fill-mode: forwards;
-}
-
-.line-ani-2{
-	animation: md-close-ani 0.5s ease-in-out;
-	animation-fill-mode: forwards;
-}
-
-.line-ani-3{
-	animation: bt-close-ani 0.5s ease-in-out;
-	animation-fill-mode: forwards;
-}
-
-@keyframes slideDown{
-	to{height: 90vh;max-height: 100vh}
-}
-
-@keyframes tp-close-ani{
-	to{transform: rotate(45deg) translateX(8px) translateY(7px);width: 25px; height: 4px;}
-}
-
-@keyframes md-close-ani{
-	to{opacity: 0;}
-}
-
-@keyframes bt-close-ani{
-	to{transform: rotate(-45deg) translateX(7px) translateY(-7px);width: 25px; height: 4px;}
-}
-
 /*mobile*/
 @media(max-width: 760px){
-	.wrapper{
-		padding: 10px;
-	}
-
-	.quick-info{
-		height: 31px;
-	}
+	.quick-info{height: 31px;}
 
 	.quick-info .block{
 		grid-column: span 2;
 		justify-self: left;
 		align-self: center;
-	}
-
-	nav{
-		width: calc(100% - 4em);
-		top: 0;
-		padding: 0 2em;
-		justify-content: flex-start;
-		transition: 0.5s;
-	}
-
-	nav .hamburger{
-		display: flex;
-		margin-left: auto;
-		cursor: pointer;
-	}
-
-	nav ul{
-		display: none;
-		max-width: 100%;
-		overflow: hidden;
-		position: absolute;
-		top: 60px;
-		padding: 0;
-		max-height: 0;
-		background-color: #eaeaea;
-	}
-
-	nav ul li{
-		width: 100%;
-		padding: 20px 0;
-	}
-
-	nav ul li a{
-		color: #333;
-		padding: 20px;
-		padding-right: 1000px;
-		border-left: none;
-	}
-
-	nav ul li a:hover{
-		background-color: #72c3e5;
-		color: #fff;
-	}
-
-	.active{
-		background-color: #72c3e5;
-		color: #fff;
-	}
-
-	.title p{
-		padding: 0;
 	}
 
 	.section-b .card,
@@ -849,26 +662,15 @@ a{
 		font-size: 14px;
 	}
 
-	.small-card-content{
-		height: 150px;
-	}
+	.small-card-content{height: 150px;}
 
 	.section-d .span1,
-	.section-d .span2{
-		grid-column: span 2;
-	}
+	.section-d .span2{grid-column: span 2;}
 
 	.section-d .span1 img,
-	.section-d .span2 img{
-		height: 100%;
-	}
+	.section-d .span2 img{height: 100%;}
 
-	.slideshow{
-		height: 300px;
-	}
+	.slideshow{height: 300px;}
 
-	.slideshow .image-text{
-		font-size: 24px!important;
-	}
+	.slideshow .image-text{font-size: 24px!important;}
 }
-

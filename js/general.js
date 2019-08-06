@@ -11,12 +11,13 @@ window.onload = function() {
 // ---- NAVIGATION ----
 	let hamburger = $('.hamburger');
 	let ulLinks = $('ul');
-	let hbg1 = $('.line:nth-child(1)');
-	let hbg2 = $('.line:nth-child(2)');
-	let hbg3 = $('.line:nth-child(3)');
+	let hbg1 = $('.hbg-line:nth-child(1)');
+	let hbg2 = $('.hbg-line:nth-child(2)');
+	let hbg3 = $('.hbg-line:nth-child(3)');
 
 	// fix double click to open bug
-	calendar.style.display = 'none';
+	if(calendar != null){calendar.style.display = 'none';}
+	
 
 	// document.addEventListener('click', (e) => {
 	// 	// console.log(e.target !== calendarBtn);
@@ -28,7 +29,7 @@ window.onload = function() {
 
 		// display at bottom 60px if scroll < content/calendar
 		// displat at top 60px if scroll > content/calendar
-	calendarBtn.addEventListener('click', toggleCalendar);
+	if(calendarBtn != null){calendarBtn.addEventListener('click', toggleCalendar);}
 
 	function toggleCalendar(){
 		if(calendar.style.display == 'none') calendar.style.display= 'block';
@@ -90,5 +91,6 @@ window.onload = function() {
 		hbg1.toggleClass('line-ani-1');
 		hbg2.toggleClass('line-ani-2');
 		hbg3.toggleClass('line-ani-3');
+		console.log('toggle menu');
 	});
 }
