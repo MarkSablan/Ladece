@@ -611,56 +611,46 @@ nav ul li a:hover{
 /*Other Offers*/
 .section-c{
 	background-color: #fff;
-	padding: 0 0 5em 0;
+
 }
 
-.section-c .other-offers{
-	overflow-x: scroll;
-	width: 100%;
+.section-c .cards-container{
 	display: grid;
-	grid-template-columns: repeat(4,1fr);
-	column-gap: 10px;
-	/*background-color: blue;*/
+	grid-template-columns: repeat(4, 1fr);
+	grid-row-gap: 1em;
+	padding: 1.5em 0;
 }
 
-.section-c .other-offers .card{
-	position: relative;
+.section-c .small-card{
+	width: 200px;
+	border-radius: 7px;
+	background-color: #26bfb5;
+	box-shadow: 3px 0px 20px 1px rgba(0, 0, 0, 0.1);
 	justify-self: center;
-	width: 300px;
-	height:  310px;
-	overflow: hidden;
 }
 
+.small-card-title,
+.small-card-content{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
 
-.section-c .other-offers .card img{
-	position: absolute;
+.small-card-title{
 	width: 100%;
-	height: 100%;
-	transition: 0.5s;
+	height: 50px;
+	background-color: #fff;
+	color: #555;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 }
 
-.section-c .other-offers .card:hover img{
-	transform: scale(1.2);
-}
-
-.section-c .other-offers .card .card-desc{
-	/*position: absolute;*/
-	background-color: rgba(0, 0, 0, 0.2);
-	position: absolute;
-	bottom: -100px;
-	transition: 0.5s;
-}
-
-.section-c .other-offers .card .card-desc .title{
-	padding: 0.5em 0;
-}
-
-.section-c .other-offers .card .card-desc .body{
-	padding: 0 0.3em 0.5em 0.3em;
-}
-
-.section-c .other-offers .card:hover .card-desc{
-	bottom: 0;
+.small-card-content{
+	width: 100%;
+	height: 150px;
+	background-color: #26bfb5;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
 }
 
 
@@ -1071,6 +1061,14 @@ footer .bottom .policy *{
 	.title p{
 		padding: 0 10em;
 	}
+
+	.section-c .small-card{
+		width: 170px;
+	}
+
+	.small-card-title{
+
+	}
 }
 
 @media(max-width: 980px){
@@ -1088,6 +1086,19 @@ footer .bottom .policy *{
 	.section-b .card:nth-child(even){
 		grid-column: 3/ 4;
 	}
+
+	.section-c .small-card{
+		width: 170px;
+	}
+
+	.small-card-title{
+		height: 40px;
+		font-size: 14px;
+	}
+
+	.small-card-content{
+		height: 120px;
+	}
 }
 
 /*tablet*/
@@ -1099,6 +1110,19 @@ footer .bottom .policy *{
 
 	.section-b {
 		margin-top: 50px;
+	}
+	
+	.section-c .small-card{
+		width: 145px;
+	}
+
+	.small-card-title{
+		height: 40px;
+		font-size: 14px;
+	}
+
+	.small-card-content{
+		height: 120px;
 	}
 	
 	footer .block,
@@ -1136,7 +1160,7 @@ footer .bottom .policy *{
 }
 
 @keyframes slideDown{
-	to{height: 300px;max-height: 100vh}
+	to{height: 90vh;max-height: 100vh}
 }
 
 @keyframes tp-close-ani{
@@ -1221,21 +1245,27 @@ footer .bottom .policy *{
 	.section-b .card,
 	.section-b .card:nth-child(even){
 		grid-column: 2/ 3;
-		width: 100%;
+		width: 340px;
 		height: 400px;
 	}
 
 	.section-b .card .image{
-		width: 330px;
+		width: 100%;
 		height: 300px;
 	}
 
-	.section-c .add-off .img-add-off{
-		grid-column: span 4;
+	.section-c .small-card{
+		grid-column: span 2;
+		width: 80%;
 	}
 
-	.section-c .add-off .description{
-		grid-column: span 4;
+	.small-card-title{
+		height: 40px;
+		font-size: 14px;
+	}
+
+	.small-card-content{
+		height: 150px;
 	}
 
 	.section-d .span1,
@@ -1256,3 +1286,4 @@ footer .bottom .policy *{
 		font-size: 24px!important;
 	}
 }
+

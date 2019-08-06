@@ -114,8 +114,8 @@
 						<i class="fas fa-sun fa-2x" style="color: #ffc913"></i>
 					</div>
 					<select name="" id="time" class="drop-down">
-							<option value="Day">Day | 09:00 - 17:00</option>
-							<option value="Night">Night | 19:00 - 07:00</option>
+							<option value="day">Day | 09:00 - 17:00</option>
+							<option value="night">Night | 19:00 - 07:00</option>
 					</select>
 				</div>
 				<div class="check block"><button class="check-now" id="check-now">Check Availability</button></div>
@@ -287,6 +287,42 @@
 			<h1>We also offer</h1>
 			<img src="./img/ribbon.png">
 			<p class="wrapper">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, dolorem adipisci beatae possimus nulla corporis fugiat ex provident aliquid ab.</p>
+		</section>
+
+		<section class="section-c wrapper">
+			
+			<div class="cards-container">
+				<div class="small-card">
+					<div class="small-card-title">Videoke</div>
+					<div class="small-card-content">
+						<i class="fas fa-microphone-alt fa-5x"></i>
+					</div>
+
+				</div>
+
+				<div class="small-card">
+					<div class="small-card-title">Lights and Sounds</div>
+					<div class="small-card-content">
+						<i class="fas fa-volume-up fa-5x"></i>
+					</div>
+				</div>
+
+				<div class="small-card">
+					<div class="small-card-title">Mobile Bar</div>
+					<div class="small-card-content">
+						<i class="fas fa-glass-martini-alt fa-5x"></i>
+					</div>
+					
+				</div>
+
+				<div class="small-card">
+					<div class="small-card-title">Catering</div>
+					<div class="small-card-content">
+						<i class="fas fa-utensils fa-5x"></i>
+					</div>
+				</div>
+			</div>
+
 		</section>
 
 <!-- REPLACE WITH CARD WITHOUT PHOTOS -->
@@ -585,7 +621,7 @@
 				 icon.classList.add('fa-moon');
 				 icon.style.color = '#d0d0d0';
 				}
-				indicator.appendChild(icon);
+				indicator.append(icon);
 			});
 
 			let c = new Calendar($('.calendar'));
