@@ -10,7 +10,9 @@
 	<meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam maiores cumque officia facilis quisquam eum harum, qui fugiat illum." />
 
 	<link rel="icon" href="./img/logo.png">
+	<link rel="stylesheet" type="text/css" href="./css/general.css">
 	<link rel="stylesheet" type="text/css" href="./css/index-styles.css">
+
 	<link rel="stylesheet" type="text/css" href="./lib/aos.css">
 	<link rel="stylesheet" type="text/css" href="./lib/calendar.css">
 	<link rel="stylesheet" href="./lib/font-awesome/css/all.css">
@@ -546,8 +548,8 @@
 			<div class="copyright block"><h3>&copy Ladece Private Resort</h3></div>
 			<div class="social-media block">
 				<a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-				<a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-				<a href="#"><i class="fab fa-facebook-messenger fa-2x"></i></a>
+				<a href="#"><i class="fab fa-twitter fa-2x" style="animation-delay: 0.5s"></i></a>
+				<a href="#"><i class="fab fa-facebook-messenger fa-2x" style="animation-delay: 1s"></i></a>
 			</div>
 			<div class="policy block">
 				<a href="" style="margin-left: auto"><i class="fas fa-balance-scale"></i>Privacy Policy</a>
@@ -556,7 +558,8 @@
 		</section>
 		
 	</footer>
-
+	
+	<!-- DIALOGFLOW SERVICE -->
 	<script 
 		defer="true" type="text/javascript" 
 		botId="5d3b0ed740a0d3eb2dbbfc34" 
@@ -568,167 +571,10 @@
 		var embedder = document.getElementById('botcopy-embedder-d7lcfheammjct'); 
 	 	embedder.parentNode.insertBefore(s, embedder); 
 	</script>
-	
 	<script type="text/javascript" src='./lib/aos.js'></script>
+	<script src="./js/general.js"></script>
+	<script src="./js/slideshow.js"></script>
 	<script type="text/javascript">
-		window.onload = function() {
-			AOS.init();
-
-// ----CALENDAR ------
-			let calendarBtn = document.querySelector("#cal-btn");
-			let calendarBtnI = document.querySelector("#cal-btn-i");
-			let calendar = document.querySelector('.calendar');
-			let time = $('#time');
-			let indicator = document.querySelector('.selected-icon');
-			let body = document.querySelector('body');
-			let hamburger = $('.hamburger');
-			let ulLinks = $('ul');
-			let hbg1 = $('.line:nth-child(1)');
-			let hbg2 = $('.line:nth-child(2)');
-			let hbg3 = $('.line:nth-child(3)');
-
-			// fix double click to open bug
-			calendar.style.display = 'none';
-
-			// document.addEventListener('click', (e) => {
-			// 	// console.log(e.target !== calendarBtn);
-			// 	if(e.target !== calendar && calendar.style.display == 'block' && e.target !== calendarBtn && e.target !== calendarBtn){
-			// 		calendar.style.display = 'none';
-			// 		console.log('hide calendar');
-			// 	}
-			// });
-
-				// display at bottom 60px if scroll < content/calendar
-				// displat at top 60px if scroll > content/calendar
-			calendarBtn.addEventListener('click', toggleCalendar);
-
-			function toggleCalendar(){
-				if(calendar.style.display == 'none') calendar.style.display= 'block';
-				else calendar.style.display= 'none';
-			}
-			// body.addEventListener('focusout', () => calendar.style.display= 'none');
-			// body.addEventListener('click', () => calendar.style.display= 'none');
-
-			time.on('change', () => {
-				indicator.innerHTML = '';
-				let icon = document.createElement('i');
-				icon.classList.add('fas');
-				icon.classList.add('fa-2x');
-				if(time.value == 'day'){
-					icon.classList.add('fa-sun');
-					icon.style.color = '#ffc913';
-				}else{
-				 icon.classList.add('fa-moon');
-				 icon.style.color = '#d0d0d0';
-				}
-				indicator.append(icon);
-			});
-
-			let c = new Calendar($('.calendar'));
-			let okBtn = $('.ok-btn'),
-			cancelBtn = $('.cancel-btn');
-			let monthLbl = $('.month'),
-			dayLbl = $('#day'),
-			yearLbl = $('.year'),
-			checkNow = $('#check-now');
-
-			checkNow.on('click', ()=>{
-
-				alert(`${monthLbl.html()} ${dayLbl.html()} ${yearLbl.html()} ${time.val()}`);
-				console.log(time);
-
-			});
-
-			cancelBtn.on('click', toggleCalendar);
-
-			okBtn.on('click', ()=>{
-
-				let date = c.getSelectedDate();
-				monthLbl.html(date.month);
-				dayLbl.html(date.day);
-				yearLbl.html(date.year);
-				// alert(date.fullDate);
-				openCalendar();
-			});
-
-
-// ----- SLIDESHOW ------
-			let images = document.querySelectorAll('.image-cont');
-			let leftBtn = document.querySelector('.left-btn');
-			let rightBtn = document.querySelector('.right-btn');
-			let index = 0;
-
-			function init(){
-				for(let i = 0; i < images.length; i++){
-					images[i].style.display = 'none';
-				}
-				images[index].style.display = 'block';
-			}
-
-			function fadeOut(element){
-				let op = 1;
-				let timer = setInterval(function(){
-					if(op <= 0.1){
-						clearInterval(timer);
-						element.style.display = 'none';
-					}
-					element.style.opacity = op;
-					element.style.filter = 'alpha(opacity='+ op * 100 + ')';
-					op -= op * 0.05;
-					// console.log(op);
-				},10);
-			}
-
-			function fadeIn(element){
-				let op = 0.1;
-				element.style.display = 'block';
-				element.style.opacity = op;
-				let timer = setInterval(function(){
-					if(op >= 1){
-						clearInterval(timer);
-					}
-					element.style.opacity = op;
-					element.style.filter = 'alpha(opacity='+ op * 100 + ')';
-					op += op * 0.02;
-				},10);
-			}
-
-			function slideRight(){
-				let previous = images[index];
-				if(index >= images.length-1) index = 0;
-				else index++;
-				fadeOut(previous);
-				fadeIn(images[index]);
-			}
-
-			function slideLeft(){
-				let previous = images[index];
-				if(index <= 0) index = images.length -1;
-				else index--;
-				fadeOut(previous);
-				fadeIn(images[index]);
-			}
-
-			rightBtn.addEventListener('click', function() {
-				slideRight();
-			});
-
-			leftBtn.addEventListener('click', () => {
-				slideLeft();
-			});
-
-			init();
-			setInterval(() => slideRight(), 5000);
-
-
-			hamburger.on('click', function() {
-				ulLinks.toggleClass('open-nav');
-				hbg1.toggleClass('line-ani-1');
-				hbg2.toggleClass('line-ani-2');
-				hbg3.toggleClass('line-ani-3');
-			});
-		}
 	</script>
-
 </body>
 </html>
